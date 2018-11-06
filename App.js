@@ -43,7 +43,7 @@ const CustomDrawerComponent = (props)=>(
     
   </SafeAreaView>
 )
-//Crea la parte superior de la aplicacion "Header"
+//Crea la parte superior de la aplicacion "Header", No se utiliza este Stack
 const RootStack = createStackNavigator(
   {
     /*Login:{
@@ -69,7 +69,7 @@ const RootStack = createStackNavigator(
   }
 );
 
-//Crea lo referente al Login
+//Crea lo referente al Login, Tampoco se utiliza este stack
 const RootStack3 = createStackNavigator(
   {
     Login:{
@@ -95,6 +95,7 @@ const RootStack3 = createStackNavigator(
     },
   }
 );
+//Desde aqui hacia abajo, ha exepción del Drawer se utilizan
 //Maneja lo referente al Tab Navigator de las Pantallas de Deportes 
 const TabScreens = createMaterialBottomTabNavigator({
     Deportes: { screen: Deportes,
@@ -135,6 +136,7 @@ const TabScreens = createMaterialBottomTabNavigator({
 },
 
 );
+//Controla el Tabnavigation de la pantalla principal
 
 const TabInicio = createMaterialBottomTabNavigator({
   Inicio: { screen: Principal,
@@ -233,7 +235,7 @@ tabBarOptions: {
 
 );
 
-//Controla El Stack Navigator De Bienestar Universitario
+//Controla El StackNavigator de todas las pantallas, en la cual, ha exepción de login. Llama las del tabNavigation
 const RootStack1 = createStackNavigator(
   {
     
@@ -262,7 +264,7 @@ const RootStack1 = createStackNavigator(
 );
 
 
-//Crea el menu de navegación
+//Crea el menu de navegación, en el momento no se utiliza, solo es prueba
 const  DrawerNatigation = createDrawerNavigator({
   Inicio: {screen: Principal},
   Bienestar: {screen: Settings},
@@ -277,7 +279,7 @@ const  DrawerNatigation = createDrawerNavigator({
     
   }
 });
-
+//Se esta llamando o mostrando el componente RootStack1, el cual contiene lo del StackNavigator
 export default class App extends React.Component {
   render() {
     return(  
