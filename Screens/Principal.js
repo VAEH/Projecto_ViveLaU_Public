@@ -27,7 +27,7 @@ export default class Principal extends React.Component {
       // de un Layout para la distribucion de los logos sociales, con su determinada Ubicación
       
       <View style={{ flex: 1, alignItems: 'center' }}><Image source={{uri: 'http://3.bp.blogspot.com/-CkoNDevraVM/W9T857JVZBI/AAAAAAAAAHA/JwZbk2z_pw8srFSzP9CKrna0UqsOyowBgCK4BGAYYCw/s1600/Inicio.png'}}
-      style={{width: 220, height: 220}} />
+      style={{width: 250, height: 220}} />
 
       <View style={{ flex: 1, }}>
       
@@ -36,7 +36,7 @@ export default class Principal extends React.Component {
                 Bienvenidos al Portal "Vive la U"
                   de la Universidad Autonoma Latinoamericana</Text>
         
-        <Ionicons name="ios-menu" onPress={()=> this.props.navigation.openDrawer()}/>
+        
         <View style={{flex: 1, flexDirection: 'row',justifyContent: 'space-between', alignItems:'center'}} >
         
         <View style={{width: 70, height: 70}}>

@@ -34,7 +34,7 @@ export default class Login extends React.Component {
 
         firebase.auth().onAuthStateChanged((user)=> {
             if(user !=null){
-               alert("Se recomienda, registrarse con el correo proporcionado por la IES")
+               alert("Se recomienda, registrarse con el correo proporcionado por la IES. Por ejemplo: persona@unaula.edu.co. Si es nuevo, debera proporcionar correo y contraseña, despues Botón 'Registro' ")
                 console.log(user)
             }
         })
@@ -62,12 +62,12 @@ export default class Login extends React.Component {
         try{
             firebase.auth().signInWithEmailAndPassword(email,password)
             .then(()=> {
-                //alert("Usuario Invalido, Por Favor intente nuevamente o registrese")
+                alert("¡Bienvenido! Gracias Por ser parte de este Gran Proyecto! :)")
                 // this.state({error:'', loading:false});
                  this.props.navigation.navigate('Home1');
              })
         }catch(error){
-            alert("Bienvenido, Gracias por ser parte de este Proyecto!!")
+            //alert("Bienvenido, Gracias por ser parte de este Proyecto!!")
             console.log(error.toString())
         }
 
@@ -125,14 +125,8 @@ export default class Login extends React.Component {
                   >
                       <Text >Registro</Text>
                   </Button>
-                  <Button style={{marginTop:10}}
-                  full
-                  rounded
-                  primary 
-                  onPress={()=> this.loginWithFacebook()}
-                  >
-                      <Text >Sign with Facebook</Text>
-                  </Button>
+                  
+                
 
 
               </Form>
@@ -142,7 +136,14 @@ export default class Login extends React.Component {
       )
       }
   }
-
+  /*<Button style={{marginTop:10}}
+  full
+  rounded
+  primary 
+  onPress={()=> this.loginWithFacebook()}
+  >
+      <Text >Sign with Facebook</Text>
+  </Button>*/
   const styles =StyleSheet.create({
       Container:{
           flex:1,

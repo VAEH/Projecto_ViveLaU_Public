@@ -14,10 +14,12 @@ import Danzas from './Screens/Danzas';
 import {Icon } from 'native-base';
 import CultuDanzas from './Screens/CultuDanzas';
 import CameraExample from './Screens/Camera';
+//import Info from './Screens/Info';
 import {createMaterialBottomTabNavigator, barStyle, paddingBottom} from 'react-navigation-material-bottom-tabs'
 //import TabScreens from './Screens/Deportes';
 
 import * as firebase from 'firebase';
+import Info from './Screens/Info';
 
 // Initialize Firebase
 const firebaseConfig = {
@@ -142,7 +144,7 @@ const TabInicio = createMaterialBottomTabNavigator({
   navigationOptions:{
     tabBarlabel:'Inicio',
     tabBarIcon : ({tintColor})=>(
-     <Icon name="ios-home"  style={{fontSize:26, color:'#fff'}}/>
+     <Icon name="ios-home"  style={{fontSize:28, color:'#fff'}}/>
 
     )
 
@@ -152,7 +154,7 @@ const TabInicio = createMaterialBottomTabNavigator({
     navigationOptions:{
       tabBarlabel:'Bienestar',
       tabBarIcon : ({tintColor})=>(
-       <Icon name="ios-people" style={{fontSize:26, color:'#fff'}}/>
+       <Icon name="ios-people" style={{fontSize:28, color:'#fff'}}/>
 
       )
 
@@ -162,7 +164,19 @@ const TabInicio = createMaterialBottomTabNavigator({
   navigationOptions:{
     tabBarlabel:'Ubicación',
     tabBarIcon : ({tintColor})=>(
-     <Icon name="ios-qr-scanner"  style={{fontSize:26, color:'#fff'}}/>
+     <Icon name="ios-qr-scanner"  style={{fontSize:28, color:'#fff'}}/>
+
+    )
+
+  }
+  },
+
+  Información: { screen: Info,
+    backgroundColor:'5e0404',
+  navigationOptions:{
+    tabBarlabel:'Información',
+    tabBarIcon : ({tintColor})=>(
+     <Icon name="ios-information-circle"  style={{fontSize:26, color:'#fff'}}/>
 
     )
 
@@ -242,6 +256,7 @@ const RootStack1 = createStackNavigator(
     },
     Deporte:TabScreens,
     Danzas:TabDanzas,
+    
     
    // Details: DetailsScreen,
   },
